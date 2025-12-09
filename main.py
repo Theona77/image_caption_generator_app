@@ -10,6 +10,12 @@ import numpy as np
 image_size = 224  
 max_length = 34
 
+import os
+
+BASE_DIR = os.path.dirname(__file__)
+model_path = os.path.join(BASE_DIR, 'outputs', 'models', 'model_resaved.keras')
+
+
 # caption generator function
 def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path):
     # load models safely
@@ -66,9 +72,10 @@ def main():
             
         #load files
         
-        model_path = 'outputs/models/model_fixed.keras'
-        feature_extractor_path = 'outputs/models/feature_extractor_fixed.keras'
+        model_path = 'outputs/models/model_resaved.keras'
+        feature_extractor_path = 'outputs/models/feature_extractor.keras'
         tokenizer_path = 'outputs/models/tokenizer.pkl'
+
 
         
         #generate caption and display image
