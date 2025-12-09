@@ -1,0 +1,6 @@
+venv/
+saved_models/
+saved_models2/
+*.h5
+*.dll
+__pycache__/
