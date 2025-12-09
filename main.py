@@ -1,29 +1,38 @@
 import streamlit as st 
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import load_model, Model
+from tensorflow.keras.models import load_model, Model # <-- FIX: Import Model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 import matplotlib.pyplot as plt
 import pickle
 import numpy as np
+import os
+
+# --- Configuration ---
 image_size = 224  
 max_length = 34
 
-import os
+# Use the names of the *re-saved* models
+RESAVED_CAPTION_MODEL_NAME = 'model_resaved.keras'
+RESAVED_FEATURE_EXTRACTOR_NAME = 'feature_extractor_resaved.keras'
 
+# Base directory setup
 BASE_DIR = os.path.dirname(__file__)
-model_path = os.path.join(BASE_DIR, 'outputs', 'models', 'model_resaved.keras')
+# No need for this global path if you define local paths in main()
+# model_path = os.path.join(BASE_DIR, 'outputs', 'models', 'model_resaved.keras')
 
 
 # caption generator function
-def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path, max_length = 34,image_size = 224  ):
+def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path, max_length=34, image_size=224):
     # load models safely
+    # This dictionary maps the model's internal 'Functional' name to the correct Keras class (Model)
     custom_objects = {"Functional": Model}
-    caption_model = load_model(model_path, custom_objects=custom_objects)
     
-    # --- FIX 2: Pass custom_objects here ---
+    # --- FIX: Pass custom_objects to BOTH model loads ---
+    caption_model = load_model(model_path, custom_objects=custom_objects)
     feature_extractor = load_model(feature_extractor_path, custom_objects=custom_objects)
     
+    # load tokenizer
     with open(tokenizer_path, "rb") as f:
         tokenizer = pickle.load(f)
     
@@ -48,6 +57,7 @@ def generate_and_display_caption(image_path, model_path, tokenizer_path, feature
         in_text += " " + word
         if word == 'endseq': 
             break
+            
     caption = in_text.replace('startseq', "").replace('endseq', "").strip()
     
     # display image with caption
@@ -57,8 +67,6 @@ def generate_and_display_caption(image_path, model_path, tokenizer_path, feature
     plt.axis('off')
     plt.title(caption, fontsize=16, color='blue')
     st.pyplot(plt)
-
-
 
 
 def main():
@@ -73,20 +81,20 @@ def main():
         with open("uploaded_image.jpg", 'wb') as f:
             f.write(uploaded_image.getbuffer())
             
-            
-        #load files
-        
-        model_path = 'outputs/models/model.keras'
-        feature_extractor_path = 'outputs/models/feature_extractor.keras'
+        # Define paths using the RESAVED model names
+        # Streamlit execution runs from the root of the app directory
+        model_path = f'outputs/models/{RESAVED_CAPTION_MODEL_NAME}'
+        feature_extractor_path = f'outputs/models/{RESAVED_FEATURE_EXTRACTOR_NAME}'
         tokenizer_path = 'outputs/models/tokenizer.pkl'
 
-
-        
-        #generate caption and display image
-        generate_and_display_caption('uploaded_image.jpg', model_path, tokenizer_path, feature_extractor_path)
+        # generate caption and display image
+        generate_and_display_caption(
+            'uploaded_image.jpg', 
+            model_path, 
+            tokenizer_path, 
+            feature_extractor_path
+        )
     
-    
-    
-#python main
+# python main
 if __name__ =="__main__":
     main()
