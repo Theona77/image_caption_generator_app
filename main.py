@@ -66,10 +66,10 @@ def main():
             
         #load files
         
-        model_path = 'outputs/models/model.keras'
+        model_path = 'outputs/models/model_fixed.keras'
+        feature_extractor_path = 'outputs/models/feature_extractor_fixed.keras'
         tokenizer_path = 'outputs/models/tokenizer.pkl'
-        feature_extractor_path = 'outputs/models/feature_extractor.keras'
-        
+
         
         #generate caption and display image
         generate_and_display_caption('uploaded_image.jpg', model_path, tokenizer_path, feature_extractor_path)
