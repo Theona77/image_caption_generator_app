@@ -72,7 +72,7 @@ def main():
             
         #load files
         
-        model_path = 'outputs/models/model_resaved.keras'
+        model_path = 'outputs/models/model.keras'
         feature_extractor_path = 'outputs/models/feature_extractor.keras'
         tokenizer_path = 'outputs/models/tokenizer.pkl'
 
