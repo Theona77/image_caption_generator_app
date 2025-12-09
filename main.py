@@ -12,18 +12,22 @@ max_length = 34
 
 # caption generator function
 def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path):
-    caption_model = load_model(model_path)
-    feature_extractor = load_model(feature_extractor_path)
+    # load models safely
+    caption_model = load_model(model_path, compile=False)
+    feature_extractor = load_model(feature_extractor_path, compile=False)
+    
+    # load tokenizer
     tokenizer = pickle.load(open(tokenizer_path, 'rb'))
     
-    # preprocess and read image
+    # preprocess image
     img = load_img(image_path, target_size=(image_size, image_size))
     img = img_to_array(img) / 255.0
     img = np.expand_dims(img, axis=0)
     
+    # extract features
     image_features = feature_extractor.predict(img, verbose=0)
     
-    #generate caption for new image
+    # generate caption
     in_text = "startseq"
     for i in range(max_length):
         sequence = tokenizer.texts_to_sequences([in_text])[0]
@@ -31,25 +35,18 @@ def generate_and_display_caption(image_path, model_path, tokenizer_path, feature
         yhat = caption_model.predict([image_features, sequence], verbose=0)
         yhat_index = np.argmax(yhat)
         word = tokenizer.index_word.get(yhat_index, None)
-        if word is None:
-            break
-        in_text += " "+ word
-        if word == 'endseq' :
-            break
-    caption = in_text.replace('startseq', '').replace("endseq", '').strip()
-        
-    #display image with caption
+        if word is None: break
+        in_text += " " + word
+        if word == 'endseq': break
+    caption = in_text.replace('startseq', '').replace('endseq', '').strip()
+    
+    # display image with caption
     img = load_img(image_path, target_size=(image_size, image_size))
     plt.figure(figsize=(8,8))
     plt.imshow(img)
     plt.axis('off')
     plt.title(caption, fontsize=16, color='blue')
     st.pyplot(plt)
-
-
-
-
-
 
 
 
@@ -72,6 +69,7 @@ def main():
         model_path = 'outputs/models/model.keras'
         tokenizer_path = 'outputs/models/tokenizer.pkl'
         feature_extractor_path = 'outputs/models/feature_extractor.keras'
+        
         
         #generate caption and display image
         generate_and_display_caption('uploaded_image.jpg', model_path, tokenizer_path, feature_extractor_path)
