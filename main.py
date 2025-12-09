@@ -19,9 +19,10 @@ model_path = os.path.join(BASE_DIR, 'outputs', 'models', 'model_resaved.keras')
 def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path, max_length = 34,image_size = 224  ):
     # load models safely
     custom_objects = {"Functional": Model}
-    caption_model = load_model(model_path)
-    feature_extractor = load_model(feature_extractor_path)
-    # load tokenizer
+    caption_model = load_model(model_path, custom_objects=custom_objects)
+    
+    # --- FIX 2: Pass custom_objects here ---
+    feature_extractor = load_model(feature_extractor_path, custom_objects=custom_objects)
     
     with open(tokenizer_path, "rb") as f:
         tokenizer = pickle.load(f)
