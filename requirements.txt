@@ -1,15 +1,14 @@
-# TensorFlow + Keras
+# Core ML Stack (Verified)
 tensorflow==2.15.0
 keras==2.15.0
-numpy==1.26.4
+numpy<2.0,>=1.26.4  # Use range for stability
 
-#test
-# Streamlit & dependencies
+# App & Dependencies
 streamlit==1.52.1
-
 rich==13.9.4
-
 Pillow==10.2.0
-matplotlib==3.10.7
-scikit-learn==1.7.2
-pandas==2.3.3
+
+# Secondary ML Libraries (Adjusted for NumPy 1.x)
+matplotlib<3.9,>=3.8.0 # Use a range to avoid specific 3.10.7 conflict
+scikit-learn<1.5,>=1.4.0
+pandas<3.0,>=2.0.0
