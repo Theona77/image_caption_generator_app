@@ -1,4 +1,4 @@
-tensorflow==2.15.0
+tensorflow==2.20.0
 protobuf==4.23.4
 streamlit==1.31.1
 numpy==1.26.4
