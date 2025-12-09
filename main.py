@@ -1,8 +1,7 @@
 import streamlit as st 
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model, Model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
-from tensorflow.keras.models import Functional # Add this line
 
 import matplotlib.pyplot as plt
 import pickle
@@ -19,7 +18,7 @@ model_path = os.path.join(BASE_DIR, 'outputs', 'models', 'model_resaved.keras')
 # caption generator function
 def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path, max_length = 34,image_size = 224  ):
     # load models safely
-    custom_objects = {"Functional": Functional}
+    custom_objects = {"Functional": Model}
     caption_model = load_model(model_path)
     feature_extractor = load_model(feature_extractor_path)
     # load tokenizer
