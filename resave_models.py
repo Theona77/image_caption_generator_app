@@ -1,9 +1,6 @@
-from tensorflow.keras.models import load_model
+import tensorflow as tf
+import keras
 
-# Load your original models
-caption_model = load_model('outputs/models/model.keras', compile=False)
-feature_extractor = load_model('outputs/models/feature_extractor.keras', compile=False)
-
-# Re-save them to ensure compatibility
-caption_model.save('outputs/models/model_fixed.keras')
-feature_extractor.save('outputs/models/feature_extractor_fixed.keras')
+print("TensorFlow Version:", tf.__version__)
+print("Keras Version:", keras.__version__)
+# Note: If using TF.Keras, the keras version will typically match the TF version up to 2.15.
