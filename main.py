@@ -17,13 +17,14 @@ model_path = os.path.join(BASE_DIR, 'outputs', 'models', 'model_resaved.keras')
 
 
 # caption generator function
-def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path):
+def generate_and_display_caption(image_path, model_path, tokenizer_path, feature_extractor_path, max_length = 34,image_size = 224  ):
     # load models safely
-    caption_model = load_model(model_path, compile=False)
-    feature_extractor = load_model(feature_extractor_path, compile=False)
-    
+    caption_model = load_model(model_path)
+    feature_extractor = load_model(feature_extractor_path)
     # load tokenizer
-    tokenizer = pickle.load(open(tokenizer_path, 'rb'))
+    
+    with open(tokenizer_path, "rb") as f:
+        tokenizer = pickle.load(f)
     
     # preprocess image
     img = load_img(image_path, target_size=(image_size, image_size))
@@ -41,10 +42,12 @@ def generate_and_display_caption(image_path, model_path, tokenizer_path, feature
         yhat = caption_model.predict([image_features, sequence], verbose=0)
         yhat_index = np.argmax(yhat)
         word = tokenizer.index_word.get(yhat_index, None)
-        if word is None: break
+        if word is None: 
+            break
         in_text += " " + word
-        if word == 'endseq': break
-    caption = in_text.replace('startseq', '').replace('endseq', '').strip()
+        if word == 'endseq': 
+            break
+    caption = in_text.replace('startseq', "").replace('endseq', "").strip()
     
     # display image with caption
     img = load_img(image_path, target_size=(image_size, image_size))
