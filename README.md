@@ -6,7 +6,9 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 ![Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)
 
-A modern **AI-powered web application** that generates natural language captions from images using deep learning (CNN + LSTM).
+This project is a web application that generates natural language captions from input images using deep learning techniques. The system combines Convolutional Neural Networks (CNN) for visual feature extraction with advanced sequence modeling architectures, including Long Short-Term Memory (LSTM) and Transformer-based decoders, to produce accurate and context-aware image descriptions. By integrating computer vision and natural language processing (NLP), the application effectively translates visual information into human-readable text through an interactive web interface built with Streamlit.
+
+In addition to its technical contributions, this project is designed as an assistive technology solution for individuals with visual impairments (Tunanetra). By converting visual content into descriptive textual information, the system helps improve digital accessibility and supports inclusive access to visual media. This research-oriented implementation demonstrates the real-world potential of AI-driven image understanding systems in enhancing accessibility, human–computer interaction, and social inclusion.
 
 ---
 
