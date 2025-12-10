@@ -132,6 +132,33 @@ https://captiontext.streamlit.app/
 2. METEOR
 3. ROUGE-L
 
+### CNN + Transformers
+
+| Metric   | Score |
+|---------|--------|
+| BLEU-1 | 0.4412 |
+| BLEU-2 | 0.2359 |
+| BLEU-3 | 0.0098 |
+| BLEU-4 | 0.0019 |
+| METEOR | 0.3820 |
+| ROUGE-L Precision | 0.3750 |
+| ROUGE-L Recall | 0.5111 |
+| ROUGE-L F1 | 0.4253 |
+
+### CNN + LSTM
+
+| Metric | Score |
+|--------|--------|
+| BLEU-1 | 0.504884 |
+| BLEU-2 | 0.317433 |
+| BLEU-3 | 0.191181 |
+| BLEU-4 | 0.113471 |
+| METEOR | 0.277254 |
+| ROUGE-L Precision | 0.4519 |
+| ROUGE-L Recall | 0.3534 |
+| ROUGE-L F1 | 0.374470 |
+
+
 ---
 ## 📜 License
 This project is licensed under the MIT License.
