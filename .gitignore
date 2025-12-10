@@ -1,6 +1,14 @@
-venv/
 saved_models/
 saved_models2/
 *.h5
 *.dll
+
+# Virtual environments
+venv/
+venv_app/
+.env/
 __pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
