@@ -13,6 +13,7 @@ A modern **AI-powered web application** that generates natural language captions
 ## ✨ Demo Preview
 
 > 📸 Upload an image → 🧠 AI analyzes → 📝 Caption is generated instantly
+<img width="1063" height="1239" alt="image" src="https://github.com/user-attachments/assets/ba259840-cc0e-4a05-b560-4794b627ac98" />
 
 ---
 
@@ -88,7 +89,7 @@ Select:
 
  ---
 
-##🧑‍💻 How to Use
+## 🧑‍💻 How to Use
 1. Open the deployed Streamlit app
 2. Upload an image
 3. Wait a few seconds
