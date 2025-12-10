@@ -104,11 +104,26 @@ https://captiontext.streamlit.app/
 
 ---
 
-## 🧠 Model Details
-- CNN used for feature extraction
-- LSTM used for sequence learning
-- Optimizer: Adam
-- Loss function: Categorical Crossentropy
+## 🧩 Model Details
+
+### Model 1 — CNN + LSTM
+
+| Component | Description |
+|-----------|-------------|
+| Feature Extraction | CNN for image feature extraction |
+| Sequence Model | LSTM (Long Short-Term Memory) |
+| Optimizer | Adam |
+| Loss Function | Categorical Crossentropy |
+
+### Model 2 — CNN + Transformer
+
+| Component | Description |
+|-----------|-------------|
+| Feature Extraction | EfficientNetB0 (Pretrained CNN) |
+| Decoder | Transformer with Multi-Head Attention |
+| Optimizer | Adam |
+| Loss Function | Sparse Categorical Crossentropy |
+
 
 ---
 
