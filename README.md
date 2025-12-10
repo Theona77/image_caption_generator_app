@@ -131,32 +131,47 @@ https://captiontext.streamlit.app/
 1. BLEU-1 to BLEU-4
 2. METEOR
 3. ROUGE-L
+<table>
+<tr>
 
-### CNN + Transformers
+<td valign="top">
 
-| Metric   | Score |
-|---------|--------|
-| BLEU-1 | 0.4412 |
-| BLEU-2 | 0.2359 |
-| BLEU-3 | 0.0098 |
-| BLEU-4 | 0.0019 |
-| METEOR | 0.3820 |
-| ROUGE-L Precision | 0.3750 |
-| ROUGE-L Recall | 0.5111 |
-| ROUGE-L F1 | 0.4253 |
+### CNN + Transformer
+
+<table>
+<tr><th>Metric</th><th>Score</th></tr>
+<tr><td>BLEU-1</td><td>0.4412</td></tr>
+<tr><td>BLEU-2</td><td>0.2359</td></tr>
+<tr><td>BLEU-3</td><td>0.0098</td></tr>
+<tr><td>BLEU-4</td><td>0.0019</td></tr>
+<tr><td>METEOR</td><td>0.3820</td></tr>
+<tr><td>ROUGE-L Precision</td><td>0.3750</td></tr>
+<tr><td>ROUGE-L Recall</td><td>0.5111</td></tr>
+<tr><td>ROUGE-L F1</td><td>0.4253</td></tr>
+</table>
+
+</td>
+
+<td valign="top">
 
 ### CNN + LSTM
 
-| Metric | Score |
-|--------|--------|
-| BLEU-1 | 0.504884 |
-| BLEU-2 | 0.317433 |
-| BLEU-3 | 0.191181 |
-| BLEU-4 | 0.113471 |
-| METEOR | 0.277254 |
-| ROUGE-L Precision | 0.4519 |
-| ROUGE-L Recall | 0.3534 |
-| ROUGE-L F1 | 0.374470 |
+<table>
+<tr><th>Metric</th><th>Score</th></tr>
+<tr><td>BLEU-1</td><td>0.504884</td></tr>
+<tr><td>BLEU-2</td><td>0.317433</td></tr>
+<tr><td>BLEU-3</td><td>0.191181</td></tr>
+<tr><td>BLEU-4</td><td>0.113471</td></tr>
+<tr><td>METEOR</td><td>0.277254</td></tr>
+<tr><td>ROUGE-L Precision</td><td>0.4519</td></tr>
+<tr><td>ROUGE-L Recall</td><td>0.3534</td></tr>
+<tr><td>ROUGE-L F1</td><td>0.374470</td></tr>
+</table>
+
+</td>
+
+</tr>
+</table>
 
 
 ---
