@@ -1,0 +1,109 @@
+# 🖼️ Image Caption Generator – Deep Learning Web App
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-orange?style=flat-square&logo=tensorflow)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.31-red?style=flat-square&logo=streamlit)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)
+
+A modern **AI-powered web application** that generates natural language captions from images using deep learning (CNN + LSTM).
+
+---
+
+## ✨ Demo Preview
+
+> 📸 Upload an image → 🧠 AI analyzes → 📝 Caption is generated instantly
+
+---
+
+## 🚀 Features
+
+✅ Drag & drop image upload  
+✅ Real-time caption generation  
+✅ Clean and interactive UI  
+✅ CNN + LSTM deep learning model  
+✅ Fast inference using pre-trained weights  
+
+---
+
+## 📁 Project Structure
+
+```bash
+image-caption-generator/
+│── main.py
+│── requirements.txt
+│── README.md
+│
+├── outputs/
+│   └── models/
+│       ├── model.keras
+│       ├── feature_extractor.keras
+│       └── tokenizer.pkl
+│
+└── dataset/
+    ├── Images/
+    └── captions.txt
+
+
+
+---
+
+## ⚙️ How to Run Locally
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/your-username/image-caption-generator.git
+cd image-caption-generator
+```
+
+
+
+2. Create and activate virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate    # macOS/Linux
+venv\Scripts\activate       # Windows
+```
+
+pip install -r requirements.txt
+
+streamlit run main.py
+
+
+🚀 How to Deploy on Streamlit Cloud
+1. Push this project to GitHub
+2. Go to: https://streamlit.io/cloud
+3. Click Create app
+4. Connect your GitHub repository
+
+Select:
+Branch: main
+File path: main.py
+Click Deploy
+
+
+🧑‍💻 How to Use
+1. Open the deployed Streamlit app
+2. Upload an image
+3. Wait a few seconds
+4. View the generated caption above the image
+
+
+
+🔗 App Endpoint
+
+Once deployed, your app URL acts as the endpoint:
+
+
+
+🧠 Model Details
+- CNN used for feature extraction
+- LSTM used for sequence learning
+- Optimizer: Adam
+- Loss function: Categorical Crossentropy
+
+📊 Evaluation Metrics
+BLEU-1 to BLEU-4
+METEOR
+ROUGE-L
