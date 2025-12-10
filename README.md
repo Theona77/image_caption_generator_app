@@ -43,15 +43,13 @@ image-caption-generator/
 └── dataset/
     ├── Images/
     └── captions.txt
-
-
+```
 
 ---
 
 ## ⚙️ How to Run Locally
 
-1. Clone this repository:
-
+1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your-username/image-caption-generator.git
 cd image-caption-generator
@@ -59,51 +57,65 @@ cd image-caption-generator
 
 
 
-2. Create and activate virtual environment:
+2️⃣ Create Virtual Environment
 ```bash
 python -m venv venv
 source venv/bin/activate    # macOS/Linux
 venv\Scripts\activate       # Windows
 ```
 
+3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
+4️⃣ Run the App
+```bash
 streamlit run main.py
+```
 
+---
 
-🚀 How to Deploy on Streamlit Cloud
+## 🚀 How to Deploy on Streamlit Cloud
 1. Push this project to GitHub
 2. Go to: https://streamlit.io/cloud
 3. Click Create app
 4. Connect your GitHub repository
-
 Select:
-Branch: main
-File path: main.py
-Click Deploy
+- Branch: main
+- File path: main.py
+- Click Deploy
 
+ ---
 
-🧑‍💻 How to Use
+##🧑‍💻 How to Use
 1. Open the deployed Streamlit app
 2. Upload an image
 3. Wait a few seconds
 4. View the generated caption above the image
 
+---
 
-
-🔗 App Endpoint
-
+## 🔗 App Endpoint
 Once deployed, your app URL acts as the endpoint:
+[App_Link](https://captiontext.streamlit.app/)
+https://captiontext.streamlit.app/
 
+---
 
-
-🧠 Model Details
+## 🧠 Model Details
 - CNN used for feature extraction
 - LSTM used for sequence learning
 - Optimizer: Adam
 - Loss function: Categorical Crossentropy
 
-📊 Evaluation Metrics
-BLEU-1 to BLEU-4
-METEOR
-ROUGE-L
+---
+
+## 📊 Evaluation Metrics
+1. BLEU-1 to BLEU-4
+2. METEOR
+3. ROUGE-L
+
+---
+## 📜 License
+This project is licensed under the MIT License.
