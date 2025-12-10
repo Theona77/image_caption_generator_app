@@ -99,7 +99,10 @@ Select:
 
 ## 🔗 App Endpoint
 Once deployed, your app URL acts as the endpoint:
+
 [App_Link](https://captiontext.streamlit.app/)
+
+
 https://captiontext.streamlit.app/
 
 ---
@@ -116,6 +119,9 @@ https://captiontext.streamlit.app/
 | Loss Function | Categorical Crossentropy |
 
 ### Model 2 — CNN + Transformer
+Model Output .h5 is in drive below
+
+[Model CNN Transformer Link](https://drive.google.com/drive/folders/1ESynwtyb6l28JhsRRvcrvtwU_-4Gk-FW?usp=sharing)
 
 | Component | Description |
 |-----------|-------------|
